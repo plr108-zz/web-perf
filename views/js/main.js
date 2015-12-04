@@ -142,6 +142,8 @@ pizzaIngredients.crusts = [
   "Stuffed Crust"
 ];
 
+
+
 // Name generator pulled from http://saturdaykid.com/usernames/generator.html
 // Capitalizes first letter of each word
 String.prototype.capitalize = function() {
@@ -498,6 +500,11 @@ console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "
 // Used by updatePositions() to decide when to log the average time per frame
 var frame = 0;
 
+// Using the approach explained by some guy named Paul here:
+// http://www.html5rocks.com/en/tutorials/speed/animations/
+var latestKnownScrollY = 0;
+var ticking = false;
+
 // Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
 function logAverageFrame(times) {   // times is the array of User Timing measurements from updatePositions()
   var numberOfEntries = times.length;
@@ -516,11 +523,13 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
+  ticking = false;
+  var currentScrollY = latestKnownScrollY;
+
   var items = document.querySelectorAll('.mover');
-  var cachedScrollTop = document.body.scrollTop;
 
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((cachedScrollTop / 1250) + (i % 5));
+    var phase = Math.sin((currentScrollY / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -534,8 +543,20 @@ function updatePositions() {
   }
 }
 
+function onScroll() {
+  latestKnownScrollY = window.scrollY;
+  requestTick();
+};
+
+function requestTick() {
+  if(!ticking) {
+    requestAnimationFrame(updatePositions);
+  }
+  ticking = true;
+}
+
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', onScroll);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
@@ -551,5 +572,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
+
+  // Needed for initial pizza rendering
   updatePositions();
 });
