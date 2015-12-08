@@ -13,7 +13,7 @@ body {
 }
 
 input {
-  background: grey;
+  background: gray;
   font-size: 18px;
 }
 
@@ -31,8 +31,9 @@ form {
 
 .mover {
   position: fixed;
-  width: 256px;
   z-index: -1;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .randomPizzaContainer {
