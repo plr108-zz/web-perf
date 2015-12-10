@@ -538,12 +538,8 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  // leftOffset is needed since the origin of the transform is the center of the screen.
-  var leftOffset = window.innerWidth / 2;
-
   // Using a modified version of the array approach for contant values presented here:
   // https://gist.github.com/prather-mcs/05526bb379f845ee2ba1
-  var phase = [];
   for (i = 0; i < 5; i++) {
     phase[i] = Math.sin((scrollFactor) + (i % 5)) * 100 - leftOffset;
   }
@@ -567,8 +563,6 @@ function updatePositions() {
   }
 }
 
-
-
 // Using a modifed version of the approach explained here by some guy named Paul:
 // http://www.html5rocks.com/en/tutorials/speed/animations/
 function onScroll() {
@@ -587,11 +581,17 @@ function requestTick() {
 // runs updatePositions on scroll
 window.addEventListener('scroll', onScroll, false);
 
+// leftOffset is needed since the origin of the transform is the center of the screen.
+var leftOffset = 0;
+var phase = [];
+
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
 
   var cols = 8;
   var s = 256;
+
+  leftOffset = window.innerWidth / 2;
 
   // basicLeft is not assigned in this loop because the value is calculated in updatePositions()
   for (var i = 0; i < NUM_BACKGROUND_PIZZAS; i++) {
