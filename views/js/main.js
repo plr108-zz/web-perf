@@ -301,6 +301,9 @@ var SHIFT = [];
 // and elem in document.addEventListener('DOMContentLoaded',---).
 var backgroundPizzas = [];
 
+// global variable to
+var lastScrollY = 0;
+
 // ticking isused as a part of using requestAnimationFrame during scrolling
 var ticking = false;
 
@@ -536,25 +539,45 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
   console.log("Average time to generate last 10 frames: " + sum / 10 + "ms");
 }
 
+// runs updatePositions on scroll
+window.addEventListener('scroll', onScroll, false);
+
+// Using a modifed version of the approach explained here by some guy named Paul:
+// http://www.html5rocks.com/en/tutorials/speed/animations/
+function onScroll() {
+  requestTick();
+}
+
+function requestTick() {
+  if(!ticking) {
+    //scrollFactor = document.body.scrollTop / 1250;
+    requestAnimationFrame(updatePositions);
+  }
+
+  ticking = true;
+}
+
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
+/*
   frame++;
   window.performance.mark("mark_start_frame");
 
-  // Using a modified version of the array approach for contant values presented here:
-  // https://gist.github.com/prather-mcs/05526bb379f845ee2ba1
-  for (i = 0; i < 5; i++) {
-    phase[i] = Math.sin((scrollFactor) + (i % 5)) * 100 - leftOffset;
-  }
 
   for (var i = 0; i < NUM_BACKGROUND_PIZZAS; i++) {
 
+    // Using a modified version of the array approach for contant values presented here:
+    // https://gist.github.com/prather-mcs/05526bb379f845ee2ba1
+    if(i < 5) {
+      phase[i] = Math.sin((scrollFactor) + (i % 5)) * 100 - leftOffset;
+    }
+
     var transformString = SHIFT[i % 8] + phase[i % 5] + "px";
 
-    backgroundPizzas[i].style.transform = "translate3d(" + transformString + ",0,0)";
+    backgroundPizzas[i].style.transform = "translate(" + transformString + ",0)";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -565,27 +588,9 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
-
+*/
   ticking = false;
 }
-
-// Using a modifed version of the approach explained here by some guy named Paul:
-// http://www.html5rocks.com/en/tutorials/speed/animations/
-function onScroll() {
-  requestTick();
-}
-
-function requestTick() {
-  if(!ticking) {
-    scrollFactor = document.body.scrollTop / 1250;
-    requestAnimationFrame(updatePositions);
-  }
-
-  ticking = true;
-}
-
-// runs updatePositions on scroll
-window.addEventListener('scroll', onScroll, false);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
@@ -593,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
 
-  leftOffset = window.innerWidth / 2;
+  //leftOffset = window.innerWidth / 2;
 
   // basicLeft is not assigned in this loop because the value is calculated in updatePositions()
   for (var i = 0; i < NUM_BACKGROUND_PIZZAS; i++) {
@@ -604,10 +609,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector("#movingPizzas1").appendChild(backgroundPizzas[i]);
   }
 
+/*
   // Populate SHIFT[]
   for(i = 0; i < cols; i++) {
       SHIFT[i] = (i % cols) * s
   }
-
+*/
   updatePositions();
 });
