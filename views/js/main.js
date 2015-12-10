@@ -520,6 +520,12 @@ console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "
 // Used by updatePositions() to decide when to log the average time per frame
 var frame = 0;
 
+// leftOffset is needed since the origin of the transform is the center of the screen.
+var leftOffset = 0;
+
+// phase is global variable related to the sliding background pizzas
+var phase = [];
+
 // Logs the average amount of time per 10 frames needed to move the sliding background pizzas on scroll.
 function logAverageFrame(times) {   // times is the array of User Timing measurements from updatePositions()
   var numberOfEntries = times.length;
@@ -548,10 +554,8 @@ function updatePositions() {
 
     var transformString = SHIFT[i % 8] + phase[i % 5] + "px";
 
-    backgroundPizzas[i].style.transform = "translateX(" + transformString + ")";
+    backgroundPizzas[i].style.transform = "translate3d(" + transformString + ",0,0)";
   }
-
-  ticking = false;
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
@@ -561,6 +565,8 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
+
+  ticking = false;
 }
 
 // Using a modifed version of the approach explained here by some guy named Paul:
@@ -580,10 +586,6 @@ function requestTick() {
 
 // runs updatePositions on scroll
 window.addEventListener('scroll', onScroll, false);
-
-// leftOffset is needed since the origin of the transform is the center of the screen.
-var leftOffset = 0;
-var phase = [];
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
