@@ -12,7 +12,7 @@ Optimizations and changes made:
 
 * Google Analytics script is loaded asynchronously
 
-* Images have been compressed, and CSS and JavaScript resources have been minified using optimized resources provided by PageSpeed Insights
+* Images have been compressed, and CSS and JavaScript resources have been minified using optimized resources provided by PageSpeed Insights.  A Pizzeria thumbnail file is now used and stored in the /img folder.
 
 * The index.html files has been reformatted using [jsbeautifier](http://jsbeautifier.org/)
 
@@ -41,4 +41,3 @@ Optimizations and changes made:
 * Using global variables and [this array approach presented by Matt Prather](https://gist.github.com/prather-mcs/05526bb379f845ee2ba1) to  simplify the pizza animation calculations in updatePositions() as much as possible.
 
 * Using the transform property to animate the pizzas since it has a small performance cost according to [csstriggers.com](http://csstriggers.com/).
-
