@@ -26,9 +26,9 @@ Optimizations and changes made:
 
 Optimizations and changes made:
 
-* The pizza.png file has been resized to 77px x 100px and compressed.
+* Different pizza image files are used for randomPizzaContainer and mover classes.  The image file for the mover class been resized to 77px x 100px and compressed.
 
-* CSS rules in /views/css/style.css and related to the .mover class have been changed to handle the new dimensions of pizza.png.  The "backface-visibility: hidden" property is now used for the .mover class.
+* CSS rules in /views/css/style.css and related to the mover class have been changed to handle the new dimensions of pizza.png.  The "backface-visibility: hidden" property is now used for the mover class.
 
 * Typo in CSS rules for .input class has been corrected: "background: grey" is now used instead of "background: gray"
 

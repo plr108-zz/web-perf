@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < NUM_BACKGROUND_PIZZAS; i++) {
     backgroundPizzas[i] = document.createElement('img');
     backgroundPizzas[i].className = 'mover';
-    backgroundPizzas[i].src = "images/pizza.png";
+    backgroundPizzas[i].src = "images/pizza2.png";
     backgroundPizzas[i].style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(backgroundPizzas[i]);
   }
