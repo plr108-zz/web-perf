@@ -3,7 +3,7 @@
 //     patrick.l.roche@gmail.com
 //     https://github.com/plr108
 //
-// Note: I removed most of the default comments in this file for clarity.
+// Note: I removed most of the original comments from this file for clarity.
 //       See the README file for more info.
 
 var pizzaIngredients = {};
