@@ -40,5 +40,5 @@ Optimizations and changes made:
 
 * Using global variables and [this array approach presented by Matt Prather](https://gist.github.com/prather-mcs/05526bb379f845ee2ba1) to  simplify the pizza animation calculations in updatePositions() as much as possible.
 
-* Using the transform property to animate the pizzas since it has a small performance cost according to csstriggers.com.
+* Using the transform property to animate the pizzas since it has a small performance cost according to [csstriggers.com](http://csstriggers.com/).
 
