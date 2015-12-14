@@ -1,10 +1,9 @@
-## Udacity Front-End Web Developer Nanodegree -- Project 4: Website Optimization
+## Udacity Front-End Web Developer Nanodegree
+###Project 4: Website Optimization
 
 This repository contains my submission for the Website Optimization project of the [Udacity Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).  Here are the optimizations I made to meet the [specifications of the project](https://www.udacity.com/course/viewer#!/c-nd001/l-2735848561/m-2686388535).
 
 ####The [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) score for index.html has been optimized (Score of 94 for Mobile, 96 for Desktop).
-
-Optimizations and changes made:
 
 * CSS resources related to above-the-fold content have been inlined in index.html
 
@@ -18,13 +17,9 @@ Optimizations and changes made:
 
 ####The time necessary to resize pizzas in /views/pizza.html has been reduced.
 
-Optimizations and changes made:
-
 * The calculations used to determine pizza sizes have been greatly simplified.  See inline comments in /views/js/main.js for details.
 
 ####All content has a framerate of 60 fps or better when scrolling in /views/pizza.html.
-
-Optimizations and changes made:
 
 * Different pizza image files are used for randomPizzaContainer and mover classes.  The image file for the mover class been resized to 77px x 100px and compressed.
 
@@ -41,3 +36,13 @@ Optimizations and changes made:
 * Using global variables and [this array approach presented by Matt Prather](https://gist.github.com/prather-mcs/05526bb379f845ee2ba1) to  simplify the pizza animation calculations in updatePositions() as much as possible.
 
 * Using the transform property to animate the pizzas since it has a small performance cost according to [csstriggers.com](http://csstriggers.com/).
+
+####The following npm packages were used in this project.
+
+*  [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of the gulp was used to execute the various npm resources used as a part of completing this project.
+(
+* [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin): used to compress images
+
+* [gulp-image-resize](https://www.npmjs.com/package/gulp-image-resize): used to resize images
+
+* [gulp-minifier](https://github.com/webyom/gulp-minifier): used to minify CSS and JavaScript files
