@@ -13,17 +13,17 @@ This repository contains my submission for the Website Optimization project of t
 
 * Images have been compressed, and CSS and JavaScript resources have been minified using optimized resources provided by PageSpeed Insights.  A Pizzeria thumbnail file is now used and stored in the /img folder.
 
-* The index.html files has been reformatted using [jsbeautifier](http://jsbeautifier.org/)
+* The index.html file has been reformatted using [jsbeautifier](http://jsbeautifier.org/)
 
 ####The time necessary to resize pizzas in /views/pizza.html has been reduced.
 
-* The calculations used to determine pizza sizes have been greatly simplified.  See inline comments in /views/js/main.js for details.
+* The calculations used to determine pizza sizes have been greatly simplified.  See inline comments in /views/js/unminified/main.js for details.
 
 ####All content has a framerate of 60 fps or better when scrolling in /views/pizza.html.
 
 * Different pizza image files are used for randomPizzaContainer and mover classes.  The image file for the mover class been resized to 77px x 100px and compressed.
 
-* CSS rules in /views/css/style.css and related to the mover class have been changed to handle the new dimensions of pizza.png.  The "backface-visibility: hidden" property is now used for the mover class.
+* CSS rules in /views/css/style.css and related to the mover class have been changed to handle the new dimensions of the pizza image file.  The "backface-visibility: hidden" property is now used for the mover class.
 
 * Typo in CSS rules for .input class has been corrected: "background: grey" is now used instead of "background: gray"
 
@@ -39,10 +39,10 @@ This repository contains my submission for the Website Optimization project of t
 
 * CSS and JavaScript files have been minified.  See views/css/unminified and views/js/unminified for the unminified versions.
 
-####The following npm packages were used in this project.
+####[npm](https://www.npmjs.com/) and the following packages were used in this project.
 
-*  [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of the gulp was used to execute the various npm resources used as a part of completing this project.
-(
+* [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of how gulp was used to execute the various npm resources used as a part of completing this project.
+
 * [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin): used to compress images
 
 * [gulp-image-resize](https://www.npmjs.com/package/gulp-image-resize): used to resize images
