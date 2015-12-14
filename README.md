@@ -37,6 +37,8 @@ This repository contains my submission for the Website Optimization project of t
 
 * Using the transform property to animate the pizzas since it has a small performance cost according to [csstriggers.com](http://csstriggers.com/).
 
+* CSS and JavaScript files have been minified.  See views/css/unminified and views/js/unminified for the unminified versions.
+
 ####The following npm packages were used in this project.
 
 *  [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of the gulp was used to execute the various npm resources used as a part of completing this project.
