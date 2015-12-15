@@ -1,9 +1,19 @@
-## Udacity Front-End Web Developer Nanodegree
-###Project 4: Website Optimization
+# Udacity Front-End Web Developer Nanodegree
+## Project 4: Website Optimization
 
-This repository contains my submission for the Website Optimization project of the [Udacity Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).  Here are the optimizations I made to meet the [specifications of the project](https://www.udacity.com/course/viewer#!/c-nd001/l-2735848561/m-2686388535).
+This repository contains my submission for the Website Optimization project of the [Udacity Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).
 
-####The [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) score for index.html has been optimized (Score of 94 for Mobile, 96 for Desktop).
+### Install Instructions
+
+* To install this website copy all files in the dist folder to the desired location on your web server.  The two main pages optimized in this project are index.html and views/pizza.html.
+
+* The production version project can be rebuilt using gulp the default task.  To rebuild, delete the dist folder and run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
+
+### Optimizations
+
+Here are the optimizations I made to meet the [specifications of the project](https://www.udacity.com/course/viewer#!/c-nd001/l-2735848561/m-2686388535).
+
+#### The [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) score for index.html has been optimized (Score of 94 for Mobile, 96 for Desktop).
 
 * CSS resources related to above-the-fold content have been inlined in index.html
 
@@ -15,7 +25,7 @@ This repository contains my submission for the Website Optimization project of t
 
 * The index.html file has been reformatted using [jsbeautifier](http://jsbeautifier.org/)
 
-####The time necessary to resize pizzas in /views/pizza.html has been reduced.
+#### The time necessary to resize pizzas in /views/pizza.html has been reduced.
 
 * The calculations used to determine pizza sizes have been greatly simplified.  See inline comments in /views/js/unminified/main.js for details.
 
@@ -39,7 +49,7 @@ This repository contains my submission for the Website Optimization project of t
 
 * CSS and JavaScript files have been minified.  See views/css/unminified and views/js/unminified for the unminified versions.
 
-####[npm](https://www.npmjs.com/) and the following packages were used in this project.
+#### [npm](https://www.npmjs.com/) and the following packages were used in this project.
 
 * [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of how gulp was used to execute the various npm resources used as a part of completing this project.
 
