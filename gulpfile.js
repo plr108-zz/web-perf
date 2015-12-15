@@ -9,22 +9,37 @@ var del = require('del');
 // then copies all source files to dist,
 // then adds minified versions of the source css files,
 // then adds minified version of the js files.
-gulp.task('default', ['minifyJS'], function() {
-
+gulp.task('default', ['copySource'], function() {
+    gulp.start('minifyMainJS','minifyMainCSS','minifyPizzaJS','minifyPizzaCSS');
 });
 
-gulp.task('minifyJS', ['minifyCSS'], function() {
-    return gulp.src('source/views/js/*')
+
+// minify the JavaScript for index.html
+gulp.task('minifyMainJS', function() {
+    return gulp.src('source/js/*')
         .pipe(minify({
             minify: true,
             collapseWhitespace: true,
             conservativeCollapse: true,
             minifyJS: true
         }))
-        .pipe(gulp.dest('dist/views/js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('minifyCSS', ['copySource'], function() {
+// minify the CSS for index.html
+gulp.task('minifyMainCSS', function() {
+    return gulp.src('source/css/*')
+        .pipe(minify({
+            minify: true,
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            minifyCSS: true
+        }))
+        .pipe(gulp.dest('dist/css'));
+});
+
+// minify the CSS for views/pizza.html
+gulp.task('minifyPizzaCSS', function() {
     return gulp.src('source/views/css/*')
         .pipe(minify({
             minify: true,
@@ -35,6 +50,17 @@ gulp.task('minifyCSS', ['copySource'], function() {
         .pipe(gulp.dest('dist/views/css'));
 });
 
+// minify the JavaScript for views/pizza.html
+gulp.task('minifyPizzaJS', function() {
+    return gulp.src('source/views/js/*')
+        .pipe(minify({
+            minify: true,
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            minifyJS: true
+        }))
+        .pipe(gulp.dest('dist/views/js'));
+});
 
 // first delete the dist directory (if it exists),
 // then copy source files to dist directory
@@ -56,7 +82,6 @@ gulp.task('compressImages', function() {
         .pipe(imageMin())
         .pipe(gulp.dest('source/views/images-compressed'))
 });
-
 
 // resizeImages was used as a part of creating views/images/pizza2.png
 // but is not called in the current build process.
