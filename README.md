@@ -5,13 +5,13 @@ This repository contains my submission for the Website Optimization project of t
 
 ### Install Instructions
 
-* To install this website copy all files in the dist folder to the desired location on your web server.  The two main pages optimized in this project are index.html and views/pizza.html.
+* To install this website copy all files in the dist folder to the desired location on your web server.
 
-* The production version project can be rebuilt using the default gulp task.  To rebuild, delete the dist folder and run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
+* The dist folder can be rebuilt using the default gulp task.  To rebuild, run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
 
 ### Optimizations
 
-Here are the optimizations I made to meet the [specifications of the project](https://www.udacity.com/course/viewer#!/c-nd001/l-2735848561/m-2686388535).
+Here are the optimizations I made to meet the [specifications of the project](https://www.udacity.com/course/viewer#!/c-nd001/l-2735848561/m-2686388535).  The two main pages optimized in this project are index.html and views/pizza.html.
 
 #### The [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) score for index.html has been optimized (Score of 94 for Mobile, 96 for Desktop).
 
@@ -27,7 +27,7 @@ Here are the optimizations I made to meet the [specifications of the project](ht
 
 #### The time necessary to resize pizzas in /views/pizza.html has been reduced.
 
-* The calculations used to determine pizza sizes have been greatly simplified.  See inline comments in /views/js/unminified/main.js for details.
+* The calculations used to determine pizza sizes have been greatly simplified.  See inline comments in /source/views/js/unminified/main.js for details.
 
 ####All content has a framerate of 60 fps or better when scrolling in /views/pizza.html.
 
@@ -47,7 +47,7 @@ Here are the optimizations I made to meet the [specifications of the project](ht
 
 * Using the transform property to animate the pizzas since it has a small performance cost according to [csstriggers.com](http://csstriggers.com/).
 
-* CSS and JavaScript files have been minified.  See views/css/unminified and views/js/unminified for the unminified versions.
+* CSS and JavaScript files have been minified.  See source/views/css and source/views/js for the unminified versions.
 
 #### [npm](https://www.npmjs.com/) and the following packages were used in this project.
 
@@ -58,3 +58,5 @@ Here are the optimizations I made to meet the [specifications of the project](ht
 * [gulp-image-resize](https://www.npmjs.com/package/gulp-image-resize): used to resize images
 
 * [gulp-minifier](https://github.com/webyom/gulp-minifier): used to minify CSS and JavaScript files
+
+* [del](https://www.npmjs.com/package/del): used to delete old files before rebuilding the dist directory

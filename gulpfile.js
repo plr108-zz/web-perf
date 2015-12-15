@@ -4,11 +4,11 @@ var imageResize = require('gulp-image-resize');
 var minify = require('gulp-minifier');
 var del = require('del');
 
-// The default task is a stub function used to build the production version of the website.
+// The default task rebuilds the dist folder,
+// which contains the production version of the website.
 // The task first deletes the existing dist directory (if it exists),
 // then copies all source files to dist,
-// then adds minified versions of the source css files,
-// then adds minified version of the js files.
+// then adds minified versions of the source css and js files.
 gulp.task('default', ['copySource'], function() {
     gulp.start('minifyMainJS','minifyMainCSS','minifyPizzaJS','minifyPizzaCSS');
 });
