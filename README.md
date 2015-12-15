@@ -7,7 +7,7 @@ This repository contains my submission for the Website Optimization project of t
 
 * To install this website copy all files in the dist folder to the desired location on your web server.
 
-* The dist folder can be rebuilt using the default gulp task.  To rebuild, run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
+* The dist folder can be rebuilt using the default gulp task.  To rebuild, install the NPM resources listed in this README and run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
 
 ### Optimizations
 
@@ -49,7 +49,9 @@ Here are the optimizations I made to meet the [specifications of the project](ht
 
 * CSS and JavaScript files have been minified.  See source/views/css and source/views/js for the unminified versions.
 
-#### [npm](https://www.npmjs.com/) and the following packages were used in this project.
+### JavaScript Packages Used
+
+#### [npm](https://www.npmjs.com/) and the following packages were used in this project.  Note: to reduce the size of this repository, only the gulpfile.js and package.json used are included in this repository.
 
 * [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of how gulp was used to execute the various npm resources used as a part of completing this project.
 
