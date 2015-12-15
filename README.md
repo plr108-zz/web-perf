@@ -50,10 +50,11 @@ Here are the optimizations I made to meet the [specifications of the project](ht
 * CSS and JavaScript files have been minified.  See source/views/css and source/views/js for the unminified versions.
 
 ### JavaScript Packages Used
+Note: For simplicity and due to file size limitations, only the gulpfile.js and package.json used are included in this repository.  If you wish to use the gulpfile, the resources listed below must be installed.
 
-#### [npm](https://www.npmjs.com/) and the following packages were used in this project.  Note: to reduce the size of this repository, only the gulpfile.js and package.json used are included in this repository.
+[npm](https://www.npmjs.com/) was used to install all packages used in this project.
 
-* [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of how gulp was used to execute the various npm resources used as a part of completing this project.
+* [gulp](https://www.npmjs.com/package/gulp): The stream building system.  Please see gulpfile.js for examples of how gulp was used to execute the packages used as a part of completing this project.
 
 * [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin): used to compress images
 
