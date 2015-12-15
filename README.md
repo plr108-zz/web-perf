@@ -7,7 +7,7 @@ This repository contains my submission for the Website Optimization project of t
 
 * To install this website copy all files in the dist folder to the desired location on your web server.  The two main pages optimized in this project are index.html and views/pizza.html.
 
-* The production version project can be rebuilt using gulp the default task.  To rebuild, delete the dist folder and run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
+* The production version project can be rebuilt using the default gulp task.  To rebuild, delete the dist folder and run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
 
 ### Optimizations
 
