@@ -7,7 +7,7 @@ This repository contains my submission for the Website Optimization project of t
 
 * To install this website copy all files in the dist folder to the desired location on your web server.
 
-* The dist folder can be rebuilt using the default gulp task.  To rebuild, install the NPM resources listed in this README and run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
+* The dist folder can be rebuilt using the default gulp task.  To rebuild, install the packages resources listed in the JavaScript Packages Used section and run the `gulp` command.  Please see [this site](https://www.npmjs.com/package/gulp) for more information on using gulp.
 
 ### Optimizations
 
