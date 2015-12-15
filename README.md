@@ -21,7 +21,7 @@ Here are the optimizations I made to meet the [specifications of the project](ht
 
 * Google Analytics script is loaded asynchronously
 
-* Images have been compressed, and CSS and JavaScript resources have been minified using optimized resources provided by PageSpeed Insights.  A Pizzeria thumbnail file is now used and stored in the /img folder.
+* Images have been compressed, and CSS and JavaScript resources have been minified.  A Pizzeria thumbnail file is now used and stored in the /img folder.
 
 * The index.html file has been reformatted using [jsbeautifier](http://jsbeautifier.org/)
 
